@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>The Florida Hotel</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .taskbar {
+                background-color: #2c3e50;
+                padding: 15px 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1000;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            }
+            .taskbar ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+            .taskbar li {
+                margin: 0 10px;
+            }
+            .taskbar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                font-weight: 500;
+            }
+            .taskbar a:hover {
+                background-color: #34495e;
+                transform: translateY(-2px);
+            }
+            .taskbar i {
+                margin-right: 8px;
+            }
+            .social-icons {
+                margin-left: auto;
+                display: flex;
+                gap: 10px;
+            }
+            .social-icons a {
+                padding: 8px;
+                border-radius: 50%;
+                background-color: #34495e;
+            }
+            .social-icons a:hover {
+                background-color: #2c3e50;
+            }
+            .main {
+                margin-top: 80px;
+                padding: 40px;
+                text-align: center;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 10px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .container {
+                padding-top: 0;
+            }
+            body {
+                background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                min-height: 100vh;
+            }
+            .main h1 {
+                font-size: 3em;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .main h2 {
+                font-size: 2em;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .main p {
+                font-size: 1.2em;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+            .main button {
+                background-color: #4a90e2;
+                color: white;
+                border: none;
+                padding: 15px 30px;
+                font-size: 1.2em;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+            .main button:hover {
+                background-color: #357abd;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="taskbar">
+                <ul>
+                    <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                    <li><a href="tour.html"><i class="fa fa-map-marker"></i>Tour</a></li>
+                    <li><a href="gallery.html"><i class="fa fa-image"></i>Gallery</a></li>
+                    <li><a href="blog.html"><i class="fa fa-newspaper-o"></i>Blog</a></li>
+                    <li><a href="booking.html"><i class="fa fa-calendar"></i>Booking</a></li>
+                    <li><a href="registration.html"><i class="fa fa-user-plus"></i>Registration</a></li>
+                    <li><a href="about.html"><i class="fa fa-info-circle"></i>About us</a></li>
+                    <div class="social-icons">
+                        <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    </div>
+                </ul>
+            </nav>
+            <div class="main">
+                <h1>THE FLORIDA HOTEL</h1> 
+                <h2>Welcomes you</h2>
+                <p>Welcome to our hotel! We're thrilled to have you as our guest.
+                    If there is anything we can do to make your stay more comfortable, please don't hesitate to let us know.
+                    Enjoy your time here! Thank you!</p>
+
+                <button type="submit" onclick="window.location.href='booking.html'">SEE ROOMS & RATES</button>
+            </div>
+        </div>
+        <marquee style="background-color: blanchedalmond;color: red; font-size:xx-large;"> 20% DISCOUNT ON ONLINE BOOKING!!</marquee>
+        
+        <!-- Include JavaScript file -->
+        <script src="./js/main.js"></script>
+    </body>
+</html>

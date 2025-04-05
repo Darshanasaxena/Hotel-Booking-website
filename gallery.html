@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Gallery - The Florida Hotel</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .taskbar {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .taskbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .taskbar li {
+            margin: 0 10px;
+        }
+        .taskbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        .taskbar a:hover {
+            background-color: #34495e;
+            transform: translateY(-2px);
+        }
+        .taskbar i {
+            margin-right: 8px;
+        }
+        .social-icons {
+            margin-left: auto;
+            display: flex;
+            gap: 10px;
+        }
+        .social-icons a {
+            padding: 8px;
+            border-radius: 50%;
+            background-color: #34495e;
+        }
+        .social-icons a:hover {
+            background-color: #2c3e50;
+        }
+        .gallery-container {
+            max-width: 1200px;
+            margin: 80px auto 0;
+            padding: 20px;
+            color: #333;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .gallery-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: white;
+        }
+        .gallery-section h1 {
+            color: #1a1a1a;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+        .gallery-item-overlay h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.2em;
+        }
+        .gallery-item-overlay p {
+            margin: 0;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .filter-btn {
+            padding: 8px 20px;
+            border: none;
+            background-color: #4a90e2;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .filter-btn:hover {
+            background-color: #357abd;
+        }
+        .filter-btn.active {
+            background-color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="taskbar">
+            <ul>
+                <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+                <li><a href="tour.html"><i class="fa fa-map-marker"></i>Tour</a></li>
+                <li><a href="gallery.html"><i class="fa fa-image"></i>Gallery</a></li>
+                <li><a href="blog.html"><i class="fa fa-newspaper-o"></i>Blog</a></li>
+                <li><a href="booking.html"><i class="fa fa-calendar"></i>Booking</a></li>
+                <li><a href="registration.html"><i class="fa fa-user-plus"></i>Registration</a></li>
+                <li><a href="about.html"><i class="fa fa-info-circle"></i>About us</a></li>
+                <div class="social-icons">
+                    <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                </div>
+            </ul>
+        </nav>
+
+        <div class="gallery-container">
+            <div class="gallery-section">
+                <h1>Our Gallery</h1>
+                <p style="text-align: center; margin-bottom: 30px;">Take a visual journey through The Florida Hotel</p>
+                
+                <div class="gallery-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Rooms</button>
+                    <button class="filter-btn">Amenities</button>
+                    <button class="filter-btn">Restaurants</button>
+                    <button class="filter-btn">Events</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Luxury Room">
+                        <div class="gallery-item-overlay">
+                            <h3>Luxury Suite</h3>
+                            <p>Experience ultimate comfort in our premium suite</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Pool">
+                        <div class="gallery-item-overlay">
+                            <h3>Infinity Pool</h3>
+                            <p>Relax in our stunning infinity pool overlooking the ocean</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Restaurant">
+                        <div class="gallery-item-overlay">
+                            <h3>Fine Dining</h3>
+                            <p>Enjoy exquisite cuisine in our elegant restaurant</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Spa">
+                        <div class="gallery-item-overlay">
+                            <h3>Spa & Wellness</h3>
+                            <p>Rejuvenate your body and mind in our luxury spa</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Conference Room">
+                        <div class="gallery-item-overlay">
+                            <h3>Conference Hall</h3>
+                            <p>State-of-the-art facilities for your business needs</p>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hotel Exterior">
+                        <div class="gallery-item-overlay">
+                            <h3>Hotel Exterior</h3>
+                            <p>Stunning architecture and beautiful surroundings</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // Get all filter buttons and gallery items
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    // Add click event listener to each filter button
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            button.classList.add('active');
+
+            const category = button.textContent.toLowerCase();
+
+            // Show/hide gallery items based on category
+            galleryItems.forEach(item => {
+                const itemTitle = item.querySelector('h3').textContent.toLowerCase();
+                if (category === 'all' || itemTitle.includes(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+</html> 

@@ -1,0 +1,21 @@
+# robots.txt for The Florida Hotel website
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /tour.html
+Allow: /gallery.html
+Allow: /blog.html
+Allow: /booking.html
+Allow: /registration.html
+Allow: /css/
+Allow: /images/
+Allow: /js/
+
+# Disallow admin areas if they exist in the future
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location (add when you have a sitemap)
+# Sitemap: https://www.thefloridahotel.com/sitemap.xml 
